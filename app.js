@@ -1,25 +1,23 @@
 'use strict';
 
 var firstAndPike = {
-  minCust: 23;
-  maxCust: 65;
-  avgCookieSale: 6.3;
-  for (var i = 0; i < 15; i++) {
-    var randonNum = Math.floor((Math.random() * 10) + 1);
-    totalSale[i] = randonNum * avgCookieSale;
+  minCust: 23,
+  maxCust: 65,
+  avgCookieSale: 6.3,
+  randomCust: function () {
+    do {
+      randonNum = Math.floor((Math.random() * 10) + 1);
+    } while (randomNum < minCust || randomNum > maxCust);
+    return randomNum;
+  }
+  totalSale: function () {
+    for (var i = 0; i < 15; i++) {
+      totalSaleByHour[i] = randomCust() * avgCookieSale;
+    }
   }
 }
 
-var seaTacAirport = {
-  minCust: 3;
-  maxCust: 24;
-  avgCookieSale: 1.2;
-  for (var i = 0; i < 15; i++) {
-    var randonNum = Math.floor((Math.random() * 10) + 1);
-    totalSale[i] = randonNum * avgCookieSale;
-  }
-}
-
+/*
 var seattleCenter = {
   minCust: 11;
   maxCust: 38;
@@ -49,3 +47,4 @@ var alki = {
     totalSale[i] = randonNum * avgCookieSale;
   }
 }
+*/
