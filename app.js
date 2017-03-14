@@ -39,6 +39,10 @@ function cookiesStore (min, max, avg, location) {
 }
 
 var firstAndPike = new cookiesStore(23, 65, 6.3, storeName[0]);
+var seaTacAirport = new cookiesStore(3, 24, 1.2, storeName[1]);
+var seattleCenter = new cookiesStore(11, 38, 3.7, storeName[0]);
+new cookiesStore(23, 65, 6.3, storeName[0]);
+new cookiesStore(23, 65, 6.3, storeName[0]);
 firstAndPike.creatListItems();
 /*
 var firstAndPike = {
