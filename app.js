@@ -70,21 +70,36 @@ var seaTacAirport = {
   }
 }
 
-
-/*
 var seattleCenter = {
   minCust: 11,
   maxCust: 38,
   avgCookieSale: 3.7,
+  storeLocation: 'Seattle Center',
+  saleEachHour: [],
   randomCust: function () {
-    return Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust);
+    return Math.floor(Math.random() * (  ((this.maxCust - this.minCust) + 1) - this.minCust));
   },
-  saleEachHour: function () {
-    var totalSaleByHour = [];
-    for (var i = 0; i < openingHours; i++) {
-      totalSaleByHour.push(Math.round(this.randomCust() * this.avgCookieSale));
+  salePerDay: function () {
+    var totalCookies = 0;
+    for (var i = 0; i < openingHours.length -1; i++) {
+      this.saleEachHour.push(Math.round(this.randomCust() * this.avgCookieSale));
+      totalCookies += this.saleEachHour[i];
     }
-    return totalSaleByHour;
+    this.saleEachHour.push(totalCookies);
+    console.log(this.saleEachHour);
+  },
+  creatListItems: function() {
+    this.salePerDay();
+    var storeName = document.createElement('h2');
+    storeName.textContent = this.storeLocation;
+    body.appendChild(storeName);
+    var storeList = document.createElement('ul');
+    for (var i = 0; i < openingHours.length; i++) {
+      var hourList = document.createElement('li');
+      hourList.textContent = openingHours[i] + ': ' + this.saleEachHour[i] + ' cookies.';
+      storeList.appendChild(hourList);
+    };
+    body.appendChild(storeList);
   }
 }
 
@@ -92,18 +107,36 @@ var capitalHill = {
   minCust: 20,
   maxCust: 38,
   avgCookieSale: 2.3,
+  storeLocation: 'Capital Hill',
+  saleEachHour: [],
   randomCust: function () {
-    return Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust);
+    return Math.floor(Math.random() * (  ((this.maxCust - this.minCust) + 1) - this.minCust));
   },
-  saleEachHour: function () {
-    var totalSaleByHour = [];
-    for (var i = 0; i < openingHours; i++) {
-      totalSaleByHour.push(Math.round(this.randomCust() * this.avgCookieSale));
+  salePerDay: function () {
+    var totalCookies = 0;
+    for (var i = 0; i < openingHours.length -1; i++) {
+      this.saleEachHour.push(Math.round(this.randomCust() * this.avgCookieSale));
+      totalCookies += this.saleEachHour[i];
     }
-    return totalSaleByHour;
+    this.saleEachHour.push(totalCookies);
+    console.log(this.saleEachHour);
+  },
+  creatListItems: function() {
+    this.salePerDay();
+    var storeName = document.createElement('h2');
+    storeName.textContent = this.storeLocation;
+    body.appendChild(storeName);
+    var storeList = document.createElement('ul');
+    for (var i = 0; i < openingHours.length; i++) {
+      var hourList = document.createElement('li');
+      hourList.textContent = openingHours[i] + ': ' + this.saleEachHour[i] + ' cookies.';
+      storeList.appendChild(hourList);
+    };
+    body.appendChild(storeList);
   }
 }
 
+/*
 var alki = {
   minCust: 2,
   maxCust: 16,
@@ -121,3 +154,4 @@ var alki = {
 }*/
 firstAndPike.creatListItems();
 seaTacAirport.creatListItems();
+seattleCenter.creatListItems();
