@@ -18,10 +18,26 @@ var firstAndPike = {
   }
 }
 
+var seaTacAirport = {
+  minCust: 3,
+  maxCust: 24,
+  avgCookieSale: 1.2,
+  randomCust: function () {
+    return Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust);
+  },
+  saleEachHour: function () {
+    var totalSaleByHour = [];
+    for (var i = 0; i < openingHours; i++) {
+      totalSaleByHour.push(Math.round(this.randomCust() * this.avgCookieSale));
+    }
+    return totalSaleByHour;
+  }
+}
+
 var seattleCenter = {
-  minCust: 11;
-  maxCust: 38;
-  avgCookieSale: 3.7;
+  minCust: 11,
+  maxCust: 38,
+  avgCookieSale: 3.7,
   randomCust: function () {
     return Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust);
   },
@@ -35,9 +51,9 @@ var seattleCenter = {
 }
 
 var capitalHill = {
-  minCust: 20;
-  maxCust: 38;
-  avgCookieSale: 2.3;
+  minCust: 20,
+  maxCust: 38,
+  avgCookieSale: 2.3,
   randomCust: function () {
     return Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust);
   },
@@ -51,9 +67,9 @@ var capitalHill = {
 }
 
 var alki = {
-  minCust: 2;
-  maxCust: 16;
-  avgCookieSale: 4.6;
+  minCust: 2,
+  maxCust: 16,
+  avgCookieSale: 4.6,
   randomCust: function () {
     return Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust);
   },
