@@ -136,6 +136,7 @@ var alki = {
   minCust: 2,
   maxCust: 16,
   avgCookieSale: 4.6,
+  storeLocation: 'Alki',
   saleEachHour: [],
   randomCust: function () {
     return Math.floor(Math.random() * (((this.maxCust - this.minCust) + 1) + this.minCust));
