@@ -20,7 +20,7 @@ function tableHeading () {
 }
 
 tableHeading();
-/*
+
 function CookiesStore (min, max, avg, location) {
   this.minCust = min;
   this.maxCust = max;
@@ -30,39 +30,41 @@ function CookiesStore (min, max, avg, location) {
   this.randomCust = function () {
     return Math.floor(Math.random() * (  ((this.maxCust - this.minCust) + 1) + this.minCust));
   };
-  this.salePerDay = function () {
-    var totalCookies = 0;
+  this.salePerHour = function () {
     for (var i = 0; i < openingHours.length -1; i++) {
       this.saleEachHour.push(Math.round(this.randomCust() * this.avgCookieSale));
-      totalCookies += this.saleEachHour[i];
-      console.log(totalCookies);
     }
-    this.saleEachHour.push(totalCookies);
   };
-  this.creatListItems = function() {
-    this.salePerDay();
-
-    var storeList = document.createElement('tr');
-    for (var i = 0; i < openingHours.length; i++) {
-      var storeName = document.createElement('th');
-      storeName.textContent = this.storeName;
-      body.appendChild(storeName);
+  this.createStore = function() {
+    this.salePerHour();
+    var tableB = document.createElement('tbody');
+    var tableRow = document.createElement('tr');
+    var storeArea = document.createElement('th');
+    storeArea.textContent = this.storeLocation;
+    tableRow.appendChild(storeArea);
+    for (var i = 0; i < openingHours.length - 1; i++) {
       var hourList = document.createElement('td');
-      hourList.textContent = openingHours[i] + ': ' + this.saleEachHour[i];
-      storeList.appendChild(hourList);
+      hourList.textContent = this.saleEachHour[i];
+      tableRow.appendChild(hourList);
     };
-    body.appendChild(storeList);
+    tableB.appendChild(tableRow);
+    myTable.appendChild(tableB);
+    body.appendChild(myTable);
   }
 }
-
+/*
+function newStore () {
+  for (var i = 0; i < storeName.length; i++) {
+    storeName.[i] =
+  }
+}*/
 var firstAndPike = new CookiesStore(23, 65, 6.3, storeName[0]);
 var seaTacAirport = new CookiesStore(3, 24, 1.2, storeName[1]);
 var seattleCenter = new CookiesStore(11, 38, 3.7, storeName[2]);
 var capitalHill = new CookiesStore(20, 38, 2.3, storeName[3]);
 var alki = new CookiesStore(2, 16, 4.6, storeName[4]);
-firstAndPike.creatListItems();
-seaTacAirport.creatListItems();
-seattleCenter.creatListItems();
-capitalHill.creatListItems();
-alki.creatListItems();
-*/
+firstAndPike.createStore();
+seaTacAirport.createStore();
+seattleCenter.createStore();
+capitalHill.createStore();
+alki.createStore();

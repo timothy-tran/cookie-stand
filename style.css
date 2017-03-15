@@ -4,3 +4,9 @@ th {
   border:1px solid black;
   padding: 10px 10px;
 }
+td {
+  background-color: green;
+  color: white;
+  border: 1px solid black;
+  text-align: center;
+}
