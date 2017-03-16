@@ -29,7 +29,7 @@ function CookiesStore (location, min, max, avg) {
   this.storeLocation = location;
   this.saleEachHour = [];
   this.randomCust = function () {
-    return Math.floor(Math.random() * (  ((this.maxCust - this.minCust) + 1) + this.minCust));
+    return Math.floor(Math.random() * (this.maxCust - this.minCust) + 1) + this.minCust;
   };
   this.salePerHour = function () {
     for (var i = 0; i < openingHours.length -1; i++) {

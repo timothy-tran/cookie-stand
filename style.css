@@ -26,15 +26,17 @@ img {
   margin: auto;
 }
 th {
-  background-color: yellow;
-  color: red;
+  font-size: 1em;
+  background-color: #ffe699;
+  color: #cc6600;
   border:1px solid black;
   padding: 10px 10px;
   border-collapse: collapse;
 }
 td {
-  background-color: green;
-  color: white;
+  font-size: 1em;
+  background-color: #85e0e0;
+  color: #006666;
   border: 1px solid black;
   text-align: center;
   margin: 0;
@@ -46,4 +48,28 @@ p {
   font-weight: bold;
   font-size: 25px;
   color: #336600;
+}
+
+a {
+  font-family: Verdana;
+  font-weight: bold;
+  color: #006600;
+  font-size: 2em;
+  text-decoration: none;
+}
+#back {
+  text-decoration: none;
+  font-size: 25px;
+  font-family: Verdana;
+  font-weight: bold;
+  color: #006666;
+}
+
+#buttonId {
+  display: block;
+  height: auto;
+  width: auto;
+  margin: auto;
+  border: 1px solid black;
+  border-radius: 5%;
 }
