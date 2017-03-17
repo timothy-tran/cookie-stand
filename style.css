@@ -1,13 +1,98 @@
+body {
+  background-color: #e6ffcc;
+}
+table {
+  margin: auto;
+}
+
+h1 {
+  font-family: fantasy;
+  font-size: 80px;
+  color: green;
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+  font-family: cursive;
+  font-size: 45px;
+  color: green;
+}
+img {
+  height: 150px;
+  width: auto;
+  margin: auto;
+  background-color: #e6ffcc;
+  display: block;
+  margin: auto;
+}
 th {
-  background-color: yellow;
-  color: red;
+  font-size: 1em;
+  background-color: #ffe699;
+  color: #cc6600;
   border:1px solid black;
   padding: 10px 10px;
+  border-collapse: collapse;
 }
 td {
-  background-color: green;
-  color: white;
+  font-size: 1em;
+  background-color: #85e0e0;
+  color: #006666;
   border: 1px solid black;
   text-align: center;
   margin: 0;
+  border-collapse: collapse;
+}
+
+p {
+  font-family: cursive;
+  font-weight: bold;
+  font-size: 25px;
+  color: #336600;
+}
+
+a {
+  font-family: Verdana;
+  font-weight: bold;
+  color: #006600;
+  font-size: 2em;
+  text-decoration: none;
+}
+#back {
+  text-decoration: none;
+  font-size: 25px;
+  font-family: Verdana;
+  font-weight: bold;
+  color: #006666;
+  margin: 20px 10px 10px 10px;
+}
+
+#buttonId {
+  display: block;
+  height: auto;
+  width: auto;
+  margin: auto;
+  border: 1px solid black;
+}
+
+fieldset {
+  width: 350px;
+  text-align: center;
+  background-color: #009999;
+  margin: auto;
+}
+
+form fieldset label {
+  font-size: 15px;
+  font-family: sans-serif;
+  color: #ccfff5;
+}
+
+#legendInput {
+  color: #cc6600;
+  font-size: 25px;
+  background-color: #ffe699;
+  font-family: fantasy;
+  border: 1px solid black;
+  padding: 10px 10px 2px
 }

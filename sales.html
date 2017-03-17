@@ -7,6 +7,31 @@
   </head>
   <body>
     <h2>Pat's Salmon Cookies Sales Table</h2>
+    <form method="get" id="inputForm">
+      <fieldset>
+        <legend id="legendInput">Add A Store</legend>
+          <label>Store Name:</label><br />
+          <input type="text" name="storeName">
+          <br />
+          <label>Minimun Number of Custermer:</label><br />
+          <input type="number" name="minCust" require />
+          <br />
+          <label>Maximun Number of Custermer:</label><br />
+          <input type="number" name="maxCust" require />
+          <br />
+          <label>Average Number of Cookie Per Custermer:</label><br />
+          <input type="number" name="avegCookie" require />
+          <br />
+          <br />
+          <input type="submit" name="submit"/>
+        </fieldset>
+    </form>
+    <br /><br />
     <script src='app.js'></script>
+    <br />
+    <button id="buttonId">
+      <a href="index.html" id="back">Go Back</a>
+    </button>
+
   </body>
 </html>
