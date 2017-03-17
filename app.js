@@ -6,7 +6,7 @@ var storeName = [['1st and Pike', 23, 65, 6.3], ['SeaTac Airport', 3, 24, 1.2], 
 
 var body = document.getElementsByTagName('body')[0];
 var myTable = document.createElement('table');
-var myForm = document.getElementById('inputForm');
+var elForm = document.getElementById('Form');
 
 function tableHeading () {
   var tableHead = document.createElement('thead');
@@ -63,4 +63,4 @@ function newStore () {
 }
 
 newStore();
-myForm.addEventListener('submit', CookiesStore.createStore);
+elForm.addEventListener('submit', CookiesStore.createStore);
