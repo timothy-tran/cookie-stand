@@ -4,6 +4,7 @@ body {
 table {
   margin: auto;
 }
+
 h1 {
   font-family: fantasy;
   font-size: 80px;
@@ -63,6 +64,7 @@ a {
   font-family: Verdana;
   font-weight: bold;
   color: #006666;
+  margin: 20px 10px 10px 10px;
 }
 
 #buttonId {
@@ -71,5 +73,26 @@ a {
   width: auto;
   margin: auto;
   border: 1px solid black;
-  border-radius: 5%;
+}
+
+fieldset {
+  width: 350px;
+  text-align: center;
+  background-color: #009999;
+  margin: auto;
+}
+
+form fieldset label {
+  font-size: 15px;
+  font-family: sans-serif;
+  color: #ccfff5;
+}
+
+#legendInput {
+  color: #cc6600;
+  font-size: 25px;
+  background-color: #ffe699;
+  font-family: fantasy;
+  border: 1px solid black;
+  padding: 10px 10px 2px
 }

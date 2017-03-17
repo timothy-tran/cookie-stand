@@ -6,6 +6,7 @@ var storeName = [['1st and Pike', 23, 65, 6.3], ['SeaTac Airport', 3, 24, 1.2], 
 
 var body = document.getElementsByTagName('body')[0];
 var myTable = document.createElement('table');
+var myForm = document.getElementById('inputForm');
 
 function tableHeading () {
   var tableHead = document.createElement('thead');
@@ -53,6 +54,7 @@ function CookiesStore (location, min, max, avg) {
     body.appendChild(myTable);
   }
 }
+
 function newStore () {
   for (var i = 0; i < storeName.length; i++) {
     var makeStore = new CookiesStore(storeName[i][0], storeName[i][1], storeName[i][2], storeName[i][3]);
@@ -61,3 +63,4 @@ function newStore () {
 }
 
 newStore();
+myForm.addEventListener('submit', CookiesStore.createStore);
