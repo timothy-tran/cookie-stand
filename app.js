@@ -4,6 +4,8 @@ var openingHours = ['Store/Hour', '6am', '7am', '8am', '9am', '10am', '11am', '1
 
 var storeName = [['1st and Pike', 23, 65, 6.3], ['SeaTac Airport', 3, 24, 1.2], ['Seattle Center', 11, 38, 3.7], ['Capital Hill', 20, 38, 2.3], ['Alki', 2, 16, 4.6]];
 
+var newLocation = [];
+
 var body = document.getElementsByTagName('body')[0];
 var myTable = document.createElement('table');
 var myForm = document.getElementById('inputForm');
