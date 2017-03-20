@@ -4,11 +4,9 @@ var openingHours = ['Store/Hour', '6am', '7am', '8am', '9am', '10am', '11am', '1
 
 var storeName = [['1st and Pike', 23, 65, 6.3], ['SeaTac Airport', 3, 24, 1.2], ['Seattle Center', 11, 38, 3.7], ['Capital Hill', 20, 38, 2.3], ['Alki', 2, 16, 4.6]];
 
-var newLocation = [];
-
 var body = document.getElementsByTagName('body')[0];
 var myTable = document.createElement('table');
-var myForm = document.getElementById('inputForm');
+var elForm = document.getElementById('inputForm');
 
 function tableHeading () {
   var tableHead = document.createElement('thead');
@@ -64,5 +62,27 @@ function newStore () {
   }
 }
 
+function submitForm(event) {
+  event.preventDefault();
+  var newStoreForm = event.target;
+  var newPlace = event.target.addName;
+  var minNum = event.target.addMin;
+  var maxNum = event.target.addMax;
+
+  var avgNum = event.target.addAvg;
+  if (minNum.value > maxNum.value) {
+    alert('The Number of Minimun Customer can\'t be greater than Number of Maximun Customer.');
+  } else {
+    var myForm = new CookiesStore(newPlace.value, minNum.value, maxNum.value, avgNum.value);
+    myForm.createStore();
+    /* making sure we add appropriate totals
+    var tfoot = document.getElementById('tableFoot');
+    var totalsRow = document.getElementById('totalsRow');
+    tfoot.removeChild(totalsRow); // first remove the existing totals row
+    hourlyStoresTotal(); // then append a new, updated totals row*/
+  }
+  elForm.reset();
+}
+
 newStore();
-myForm.addEventListener('submit', CookiesStore.createStore);
+elForm.addEventListener('submit', submitForm);
