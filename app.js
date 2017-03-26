@@ -7,6 +7,10 @@ var storeName = [['1st and Pike', 23, 65, 6.3], ['SeaTac Airport', 3, 24, 1.2], 
 var body = document.getElementsByTagName('body')[0];
 var myTable = document.createElement('table');
 var elForm = document.getElementById('inputForm');
+body.appendChild(myTable);
+
+var totalByHour = [];
+var totalSaleHolder = [];
 
 function tableHeading () {
   var tableHead = document.createElement('thead');
@@ -18,7 +22,6 @@ function tableHeading () {
   }
   tableHead.appendChild(tableRow);
   myTable.appendChild(tableHead);
-  body.appendChild(myTable);
 }
 
 tableHeading();
@@ -37,7 +40,9 @@ function CookiesStore (location, min, max, avg) {
       this.saleEachHour.push(Math.round(this.randomCust() * this.avgCookieSale));
     }
   };
+
   this.createStore = function() {
+    var totalSaleHolder = [];
     this.salePerHour();
     var tableB = document.createElement('tbody');
     var tableRow = document.createElement('tr');
@@ -48,18 +53,28 @@ function CookiesStore (location, min, max, avg) {
       var hourList = document.createElement('td');
       hourList.textContent = this.saleEachHour[i];
       tableRow.appendChild(hourList);
+      totalSaleHolder.push(this.saleEachHour[i]);
     };
     tableB.appendChild(tableRow);
     myTable.appendChild(tableB);
-    body.appendChild(myTable);
   }
 }
 
 function newStore () {
+  var sumSaleArray = [];
+  for (var k = 0; k < openingHours.length - 1; k++) {
+    totalByHour[k] = 0;
+  }
   for (var i = 0; i < storeName.length; i++) {
     var makeStore = new CookiesStore(storeName[i][0], storeName[i][1], storeName[i][2], storeName[i][3]);
     makeStore.createStore();
-  }
+    sumSaleArray = makeStore.saleEachHour;
+    console.log('sale: ', sumSaleArray);
+    for (var j = 0; j < openingHours.length - 1; j++) {
+        totalByHour[j] += sumSaleArray[j];
+    };
+    console.log('totalByHour: ', totalByHour);
+  };
 }
 
 function submitForm(event) {
@@ -68,21 +83,34 @@ function submitForm(event) {
   var newPlace = event.target.addName;
   var minNum = event.target.addMin;
   var maxNum = event.target.addMax;
-
+  var arrayHolder = [];
   var avgNum = event.target.addAvg;
   if (minNum.value > maxNum.value) {
     alert('The Number of Minimun Customer can\'t be greater than Number of Maximun Customer.');
   } else {
     var myForm = new CookiesStore(newPlace.value, minNum.value, maxNum.value, avgNum.value);
     myForm.createStore();
-    /* making sure we add appropriate totals
-    var tfoot = document.getElementById('tableFoot');
-    var totalsRow = document.getElementById('totalsRow');
-    tfoot.removeChild(totalsRow); // first remove the existing totals row
-    hourlyStoresTotal(); // then append a new, updated totals row*/
+    alert('The new store is successfully added!');
+    arrayHolder = [newPlace.value, minNum.value, maxNum.value, avgNum.value];
   }
   elForm.reset();
 }
 
+function totalSale () {
+  var tableB = document.createElement('tbody');
+  var tableRow = document.createElement('tr');
+  var storeArea = document.createElement('th');
+  storeArea.textContent = 'Total';
+  tableRow.appendChild(storeArea);
+  for (var i = 0; i < openingHours.length - 1; i++) {
+    var hourList = document.createElement('td');
+    hourList.textContent = totalByHour[i];
+    tableRow.appendChild(hourList);
+  };
+  tableB.appendChild(tableRow);
+  myTable.appendChild(tableB);
+}
+
 newStore();
+totalSale();
 elForm.addEventListener('submit', submitForm);
