@@ -8,9 +8,12 @@ var body = document.getElementsByTagName('body')[0];
 var myTable = document.createElement('table');
 var elForm = document.getElementById('inputForm');
 body.appendChild(myTable);
-
+var tableB = document.createElement('tbody');
+var tRow = document.createElement('tr');
+//var storeArea = document.createElement('th');
 var totalByHour = [];
 var totalSaleHolder = [];
+var hourList;
 
 function tableHeading () {
   var tableHead = document.createElement('thead');
@@ -27,6 +30,7 @@ function tableHeading () {
 tableHeading();
 
 function CookiesStore (location, min, max, avg) {
+
   this.minCust = min;
   this.maxCust = max;
   this.avgCookieSale = avg;
@@ -91,23 +95,25 @@ function submitForm(event) {
     var myForm = new CookiesStore(newPlace.value, minNum.value, maxNum.value, avgNum.value);
     myForm.createStore();
     alert('The new store is successfully added!');
+    tableB.removeChild(tableRow);
+    totalSale();
     arrayHolder = [newPlace.value, minNum.value, maxNum.value, avgNum.value];
   }
   elForm.reset();
 }
 
 function totalSale () {
-  var tableB = document.createElement('tbody');
-  var tableRow = document.createElement('tr');
+//  var tableB = document.createElement('tbody');
+//  var tableRow = document.createElement('tr');
   var storeArea = document.createElement('th');
   storeArea.textContent = 'Total';
-  tableRow.appendChild(storeArea);
+  tRow.appendChild(storeArea);
   for (var i = 0; i < openingHours.length - 1; i++) {
-    var hourList = document.createElement('td');
+    hourList = document.createElement('td');
     hourList.textContent = totalByHour[i];
-    tableRow.appendChild(hourList);
+    tRow.appendChild(hourList);
   };
-  tableB.appendChild(tableRow);
+  tableB.appendChild(tRow);
   myTable.appendChild(tableB);
 }
 
