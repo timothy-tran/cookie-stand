@@ -22,7 +22,7 @@ function tableHeading () {
     var storeHour = document.createElement('th');
     storeHour.textContent = openingHours[i];
     tableRow.appendChild(storeHour);
-  }
+  };
   tableHead.appendChild(tableRow);
   myTable.appendChild(tableHead);
 }
@@ -30,7 +30,6 @@ function tableHeading () {
 tableHeading();
 
 function CookiesStore (location, min, max, avg) {
-
   this.minCust = min;
   this.maxCust = max;
   this.avgCookieSale = avg;

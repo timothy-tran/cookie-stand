@@ -1,6 +1,7 @@
 body {
   background-color: #e6ffcc;
 }
+
 table {
   margin: auto;
 }
@@ -58,6 +59,7 @@ a {
   font-size: 2em;
   text-decoration: none;
 }
+
 #back {
   text-decoration: none;
   font-size: 25px;
