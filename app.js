@@ -95,8 +95,6 @@ function submitForm(event) {
     alert('The new store is successfully added!');
     sumSaleArray = myForm.saleEachHour;
     addStore();
-    //tableB.removeChild(tRow);
-    myTable.removeChild(tableB);
     totalSale();
   }
   elForm.reset();
