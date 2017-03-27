@@ -9,7 +9,7 @@ var myTable = document.createElement('table');
 var elForm = document.getElementById('inputForm');
 body.appendChild(myTable);
 var tableB = document.createElement('tbody');
-var tRow = document.createElement('tr');
+//var tRow = document.createElement('tr');
 var totalByHour = [];
 var totalSaleHolder = [];
 var sumSaleArray = [];
@@ -46,9 +46,7 @@ function CookiesStore (location, min, max, avg) {
   };
 
   this.createStore = function() {
-    var totalSaleHolder = [];
     this.salePerHour();
-    var tableB = document.createElement('tbody');
     var tableRow = document.createElement('tr');
     var storeArea = document.createElement('th');
     storeArea.textContent = this.storeLocation;
@@ -57,7 +55,6 @@ function CookiesStore (location, min, max, avg) {
       var hourList = document.createElement('td');
       hourList.textContent = this.saleEachHour[i];
       tableRow.appendChild(hourList);
-      totalSaleHolder.push(this.saleEachHour[i]);
     };
     tableB.appendChild(tableRow);
     myTable.appendChild(tableB);
@@ -98,13 +95,15 @@ function submitForm(event) {
     alert('The new store is successfully added!');
     sumSaleArray = myForm.saleEachHour;
     addStore();
-    tableB.removeChild(tRow);
+    //tableB.removeChild(tRow);
+    myTable.removeChild(tableB);
     totalSale();
   }
   elForm.reset();
 }
 
 function totalSale () {
+  var tRow = document.createElement('tr');
   var storeArea = document.createElement('th');
   storeArea.textContent = 'Total';
   tRow.appendChild(storeArea);
@@ -118,5 +117,4 @@ function totalSale () {
 };
 
 newStore();
-
 elForm.addEventListener('submit', submitForm);
