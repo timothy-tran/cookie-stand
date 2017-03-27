@@ -76,7 +76,7 @@ totalSale();
 
 function addStore () {
   for (var j = 0; j < openingHours.length - 1; j++) {
-      totalByHour[j] += sumSaleArray[j];
+    totalByHour[j] += sumSaleArray[j];
   };
 }
 
