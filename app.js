@@ -2,10 +2,13 @@
 
 var openingHours = ['Store/Hour', '6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 
-var storeName = [['1st and Pike', 23, 65, 6.3], ['SeaTac Airport', 3, 24, 1.2], ['Seattle Center', 11, 38, 3.7], ['Capital Hill', 20, 38, 2.3], ['Alki', 2, 16, 4.6]];
+var storeName = [['1st and Pike', 23, 65, 6.3], ['SeaTac Airport', 3, 24, 1.2], ['Seattle Center', 11, 38, 3.7], ['Capital Hill', 20, 38, 2.3], ['Alki', 2, 16, 4.6], ['Tim\'s Store', 16, 58, 2.6]];
 
 var body = document.getElementsByTagName('body')[0];
 var myTable = document.createElement('table');
+<<<<<<< HEAD
+var elForm = document.getElementById('Form');
+=======
 var elForm = document.getElementById('inputForm');
 body.appendChild(myTable);
 var tableB = document.createElement('tbody');
@@ -14,6 +17,7 @@ var totalByHour = [];
 var totalSaleHolder = [];
 var sumSaleArray = [];
 var hourList;
+>>>>>>> b6f4a65fc2007a92a11e74f8da358123e47cdcb0
 
 function tableHeading () {
   var tableHead = document.createElement('thead');
