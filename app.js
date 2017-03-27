@@ -83,14 +83,14 @@ function addStore () {
 function submitForm(event) {
   event.preventDefault();
   var newStoreForm = event.target;
-  var newPlace = event.target.addName;
-  var minNum = event.target.addMin;
-  var maxNum = event.target.addMax;
-  var avgNum = event.target.addAvg;
-  if (minNum.value > maxNum.value) {
+  var newPlace = event.target.addName.value;
+  var minNum = event.target.addMin.value;
+  var maxNum = event.target.addMax.value;
+  var avgNum = event.target.addAvg.value;
+  if (minNum > maxNum) {
     alert('The Number of Minimun Customer can\'t be greater than Number of Maximun Customer.');
   } else {
-    var myForm = new CookiesStore(newPlace.value, minNum.value, maxNum.value, avgNum.value);
+    var myForm = new CookiesStore(newPlace, minNum, maxNum, avgNum);
     myForm.createStore();
     alert('The new store is successfully added!');
     sumSaleArray = myForm.saleEachHour;
